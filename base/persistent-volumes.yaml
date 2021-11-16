@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-rabbimq-01
+  labels:
+     disk: "rabbitmq-01"
+spec:
+  capacity:
+    storage: 50Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: rabbitmq
+  hostPath: 
+    path: opt
+  # nodeAffinity:
+  #   required:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: kubernetes.io/hostname
+  #         operator: In
+  #         values:
+  #         - worker-4
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-rabbimq-02
+  labels:
+     disk: rabbitmq-02
+spec:
+  capacity:
+    storage: 50Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: rabbitmq
+  hostPath: 
+    path: opt
+  # nodeAffinity:
+  #   required:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: kubernetes.io/hostname
+  #         operator: In
+  #         values:
+  #         - worker-1

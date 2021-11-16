@@ -14,7 +14,7 @@ kubectl apply -f "https://github.com/rabbitmq/cluster-operator/releases/latest/d
         name: definition
 ```
 
-# Set labels on nodes
+## Set labels on nodes
 ```
 kubectl label nodes worker-4 rabbitmq.ibits.co/node=rabbitmq
 ```

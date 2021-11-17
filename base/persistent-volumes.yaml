@@ -8,13 +8,14 @@ metadata:
 spec:
   capacity:
     storage: 50Gi
+  hostPath:
+    path: /opt/minikube/app/rabbitmq
+    type: DirectoryOrCreate
   volumeMode: Filesystem
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: rabbitmq
-  hostPath: 
-    path: opt
   # nodeAffinity:
   #   required:
   #     nodeSelectorTerms:
@@ -33,13 +34,14 @@ metadata:
 spec:
   capacity:
     storage: 50Gi
+  hostPath:
+    path: /opt/minikube/app/rabbitmq
+    type: DirectoryOrCreate
   volumeMode: Filesystem
   accessModes:
   - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   storageClassName: rabbitmq
-  hostPath: 
-    path: opt
   # nodeAffinity:
   #   required:
   #     nodeSelectorTerms:

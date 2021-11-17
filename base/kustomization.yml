@@ -5,3 +5,4 @@ resources:
   - ./definition.yaml
   - ./storage-class.yaml
   - ./persistent-volumes.yaml
+  # - ./pvc.yaml
